@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ArrowLeft, Star, MapPin, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,10 +6,25 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { doctors, Doctor } from "@/data/mockData";
 
+type FilterType = "all" | "nearby" | "rated" | "today";
+
 const SearchResults = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [filteredDoctors] = useState<Doctor[]>(doctors);
+  const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+
+  const filteredDoctors = useMemo(() => {
+    switch (activeFilter) {
+      case "nearby":
+        return [...doctors].sort(() => Math.random() - 0.5).slice(0, 4);
+      case "rated":
+        return [...doctors].sort((a, b) => b.rating - a.rating);
+      case "today":
+        return doctors.filter((_, index) => index % 2 === 0);
+      default:
+        return doctors;
+    }
+  }, [activeFilter]);
 
   return (
     <div className="min-h-screen bg-background pt-11 pb-6">
@@ -30,16 +45,32 @@ const SearchResults = () => {
 
       {/* Filters */}
       <div className="px-5 py-3 flex gap-2 overflow-x-auto">
-        <Badge variant="secondary" className="whitespace-nowrap px-4 py-1.5">
+        <Badge 
+          variant={activeFilter === "all" ? "secondary" : "outline"}
+          className="whitespace-nowrap px-4 py-1.5 cursor-pointer"
+          onClick={() => setActiveFilter("all")}
+        >
           Todos
         </Badge>
-        <Badge variant="outline" className="whitespace-nowrap px-4 py-1.5">
+        <Badge 
+          variant={activeFilter === "nearby" ? "secondary" : "outline"}
+          className="whitespace-nowrap px-4 py-1.5 cursor-pointer"
+          onClick={() => setActiveFilter("nearby")}
+        >
           Cerca de mí
         </Badge>
-        <Badge variant="outline" className="whitespace-nowrap px-4 py-1.5">
+        <Badge 
+          variant={activeFilter === "rated" ? "secondary" : "outline"}
+          className="whitespace-nowrap px-4 py-1.5 cursor-pointer"
+          onClick={() => setActiveFilter("rated")}
+        >
           Mejor valorados
         </Badge>
-        <Badge variant="outline" className="whitespace-nowrap px-4 py-1.5">
+        <Badge 
+          variant={activeFilter === "today" ? "secondary" : "outline"}
+          className="whitespace-nowrap px-4 py-1.5 cursor-pointer"
+          onClick={() => setActiveFilter("today")}
+        >
           Disponibles hoy
         </Badge>
       </div>
