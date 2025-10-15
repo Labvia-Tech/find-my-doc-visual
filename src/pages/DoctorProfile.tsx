@@ -36,9 +36,9 @@ const DoctorProfile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-11">
+    <div className="min-h-screen bg-background pt-11 pb-6">
       {/* Header */}
-      <header className="bg-card border-b px-6 py-4 flex items-center gap-3">
+      <header className="bg-card border-b px-5 py-4 flex items-center gap-3">
         <Button
           variant="ghost"
           size="icon"
@@ -50,7 +50,7 @@ const DoctorProfile = () => {
       </header>
 
       {/* Doctor Info */}
-      <div className="px-6 py-6">
+      <div className="px-5 py-5">
         <div className="flex gap-4 mb-6">
           <img
             src={doctor.image}

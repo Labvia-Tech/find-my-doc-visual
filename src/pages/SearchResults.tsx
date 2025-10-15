@@ -12,9 +12,9 @@ const SearchResults = () => {
   const [filteredDoctors] = useState<Doctor[]>(doctors);
 
   return (
-    <div className="min-h-screen bg-background pt-11">
+    <div className="min-h-screen bg-background pt-11 pb-6">
       {/* Header */}
-      <header className="bg-card border-b px-6 py-4 flex items-center gap-3">
+      <header className="bg-card border-b px-5 py-4 flex items-center gap-3">
         <Button
           variant="ghost"
           size="icon"
@@ -29,27 +29,27 @@ const SearchResults = () => {
       </header>
 
       {/* Filters */}
-      <div className="px-6 py-4 flex gap-2 overflow-x-auto">
-        <Badge variant="secondary" className="whitespace-nowrap">
+      <div className="px-5 py-3 flex gap-2 overflow-x-auto">
+        <Badge variant="secondary" className="whitespace-nowrap px-4 py-1.5">
           Todos
         </Badge>
-        <Badge variant="outline" className="whitespace-nowrap">
+        <Badge variant="outline" className="whitespace-nowrap px-4 py-1.5">
           Cerca de mí
         </Badge>
-        <Badge variant="outline" className="whitespace-nowrap">
+        <Badge variant="outline" className="whitespace-nowrap px-4 py-1.5">
           Mejor valorados
         </Badge>
-        <Badge variant="outline" className="whitespace-nowrap">
+        <Badge variant="outline" className="whitespace-nowrap px-4 py-1.5">
           Disponibles hoy
         </Badge>
       </div>
 
       {/* Results List */}
-      <div className="px-6 pb-6 space-y-3">
+      <div className="px-5 pb-6 space-y-3 mt-2">
         {filteredDoctors.map((doctor) => (
           <Card
             key={doctor.id}
-            className="p-4 cursor-pointer hover:shadow-hover transition-all"
+            className="p-4 cursor-pointer hover:shadow-hover transition-all active:scale-[0.98]"
             onClick={() => navigate(`/doctor/${doctor.id}`)}
           >
             <div className="flex gap-3">

@@ -43,9 +43,9 @@ const Appointment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-11">
+    <div className="min-h-screen bg-background pt-11 pb-28">
       {/* Header */}
-      <header className="bg-card border-b px-6 py-4 flex items-center gap-3">
+      <header className="bg-card border-b px-5 py-4 flex items-center gap-3">
         <Button
           variant="ghost"
           size="icon"
@@ -57,7 +57,7 @@ const Appointment = () => {
       </header>
 
       {/* Doctor Summary */}
-      <div className="px-6 py-4">
+      <div className="px-5 py-4">
         <Card className="p-4 flex gap-3">
           <img
             src={doctor.image}
@@ -72,7 +72,7 @@ const Appointment = () => {
       </div>
 
       {/* Date Selection */}
-      <div className="px-6 py-4">
+      <div className="px-5 py-4">
         <h3 className="font-semibold mb-3 flex items-center gap-2">
           <Calendar className="w-5 h-5" />
           Selecciona una fecha
@@ -93,7 +93,7 @@ const Appointment = () => {
       </div>
 
       {/* Time Selection */}
-      <div className="px-6 py-4">
+      <div className="px-5 py-4">
         <h3 className="font-semibold mb-3 flex items-center gap-2">
           <Clock className="w-5 h-5" />
           Selecciona una hora
@@ -113,7 +113,7 @@ const Appointment = () => {
       </div>
 
       {/* Confirm Button */}
-      <div className="fixed bottom-0 left-0 right-0 p-6 bg-background border-t">
+      <div className="fixed bottom-0 left-0 right-0 p-5 bg-background border-t shadow-lg">
         <Button
           className="w-full"
           size="lg"

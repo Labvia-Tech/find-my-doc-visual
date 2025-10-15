@@ -22,9 +22,9 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-11">
+    <div className="min-h-screen bg-background pt-11 pb-24">
       {/* Header */}
-      <header className="bg-gradient-primary text-primary-foreground px-6 py-6 rounded-b-3xl shadow-card">
+      <header className="bg-gradient-primary text-primary-foreground px-5 py-6 rounded-b-3xl shadow-card mb-1">
         <h1 className="text-2xl font-bold mb-4">SaludDirecta</h1>
         
         <div className="relative">
@@ -38,15 +38,15 @@ const Home = () => {
       </header>
 
       {/* Categories */}
-      <section className="px-6 py-6">
-        <h2 className="text-lg font-semibold mb-4">Categorías</h2>
-        <div className="grid grid-cols-2 gap-3">
+      <section className="px-5 py-5">
+        <h2 className="text-lg font-semibold mb-3">Categorías</h2>
+        <div className="grid grid-cols-2 gap-3 mb-1">
           {categories.map((category) => {
             const Icon = getIcon(category.icon);
             return (
               <Card
                 key={category.value}
-                className="p-4 flex flex-col items-center gap-3 cursor-pointer hover:shadow-hover transition-shadow"
+                className="p-5 flex flex-col items-center gap-3 cursor-pointer hover:shadow-hover transition-shadow"
                 onClick={() => navigate('/search', { state: { category: category.value } })}
               >
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -60,15 +60,15 @@ const Home = () => {
       </section>
 
       {/* Popular Specialties */}
-      <section className="px-6 py-6">
-        <h2 className="text-lg font-semibold mb-4">Especialidades populares</h2>
+      <section className="px-5 py-5">
+        <h2 className="text-lg font-semibold mb-3">Especialidades populares</h2>
         <div className="grid grid-cols-3 gap-3">
           {specialties.map((specialty) => {
             const Icon = getIcon(specialty.icon);
             return (
               <Card
                 key={specialty.name}
-                className="p-3 flex flex-col items-center gap-2 cursor-pointer hover:shadow-hover transition-shadow"
+                className="p-4 flex flex-col items-center gap-2 cursor-pointer hover:shadow-hover transition-shadow"
                 onClick={() => navigate('/search', { state: { specialty: specialty.name } })}
               >
                 <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">

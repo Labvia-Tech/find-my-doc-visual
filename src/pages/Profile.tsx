@@ -31,9 +31,9 @@ const Profile = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-11">
+    <div className="min-h-screen bg-background pt-11 pb-6">
       {/* Header */}
-      <header className="bg-card border-b px-6 py-4 flex items-center gap-3">
+      <header className="bg-card border-b px-5 py-4 flex items-center gap-3">
         <Button
           variant="ghost"
           size="icon"
@@ -48,7 +48,7 @@ const Profile = () => {
       </header>
 
       {/* User Info */}
-      <div className="px-6 py-6 text-center">
+      <div className="px-5 py-5 text-center">
         <Avatar className="w-24 h-24 mx-auto mb-4">
           <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" />
           <AvatarFallback>JP</AvatarFallback>
@@ -58,7 +58,7 @@ const Profile = () => {
       </div>
 
       {/* Upcoming Appointments */}
-      <div className="px-6 py-4">
+      <div className="px-5 py-4">
         <h3 className="font-semibold mb-3 flex items-center gap-2">
           <Calendar className="w-5 h-5" />
           Próximas citas
@@ -83,7 +83,7 @@ const Profile = () => {
       </div>
 
       {/* Favorites */}
-      <div className="px-6 py-4">
+      <div className="px-5 py-4">
         <h3 className="font-semibold mb-3 flex items-center gap-2">
           <Heart className="w-5 h-5" />
           Favoritos

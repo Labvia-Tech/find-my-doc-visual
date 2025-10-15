@@ -42,7 +42,7 @@ export const doctors: Doctor[] = [
     specialty: "Odontología",
     rating: 4.7,
     reviews: 203,
-    image: "https://images.unsplash.com/photo-1629909615957-be38ec5a7b77?w=400&h=400&fit=crop",
+    image: new URL('../assets/clinica-dental.jpg', import.meta.url).href,
     experience: "20 años de experiencia",
     description: "Clínica dental integral con tecnología de última generación y equipo altamente calificado.",
     priceRange: "$300 - $1200",

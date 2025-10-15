@@ -25,9 +25,9 @@ const Rating = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-11">
+    <div className="min-h-screen bg-background pt-11 pb-6">
       {/* Header */}
-      <header className="bg-card border-b px-6 py-4 flex items-center gap-3">
+      <header className="bg-card border-b px-5 py-4 flex items-center gap-3">
         <Button
           variant="ghost"
           size="icon"
@@ -38,7 +38,7 @@ const Rating = () => {
         <h1 className="text-lg font-semibold flex-1">Calificar atención</h1>
       </header>
 
-      <div className="px-6 py-8">
+      <div className="px-5 py-6">
         <div className="text-center mb-8">
           <h2 className="text-xl font-bold mb-2">
             ¿Cómo fue tu experiencia con {doctor}?
